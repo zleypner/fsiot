@@ -1,12 +1,18 @@
 'use client'
 
 import Image from 'next/image'
+import { GraduationCap, Hand, Dumbbell, type LucideIcon } from 'lucide-react'
 
-const credentials = [
-  { icon: '🎓', text: 'Licenciado en Terapia Física y Rehabilitación' },
-  { icon: '🎓', text: 'Master en Movimiento Humano y Salud Integral' },
-  { icon: '💆', text: 'Masoterapeuta' },
-  { icon: '💪', text: 'Instructor de Pesas y Clases Grupales' },
+interface Credential {
+  icon: LucideIcon
+  text: string
+}
+
+const credentials: Credential[] = [
+  { icon: GraduationCap, text: 'Licenciado en Terapia Física y Rehabilitación' },
+  { icon: GraduationCap, text: 'Master en Movimiento Humano y Salud Integral' },
+  { icon: Hand, text: 'Masoterapeuta' },
+  { icon: Dumbbell, text: 'Instructor de Pesas y Clases Grupales' },
 ]
 
 export default function About() {
@@ -22,10 +28,10 @@ export default function About() {
             <Image
               src="/assets/fisio.jpeg"
               alt="Johan Retana - Terapeuta Físico"
-              width={600}
-              height={400}
+              width={800}
+              height={600}
               priority
-              quality={90}
+              quality={100}
               style={{ width: '100%', height: 'auto' }}
             />
           </div>
@@ -34,7 +40,7 @@ export default function About() {
             <div className="credentials">
               {credentials.map((credential, index) => (
                 <div key={index} className="credential-item">
-                  <span className="credential-icon">{credential.icon}</span>
+                  <span className="credential-icon"><credential.icon size={24} strokeWidth={1.5} /></span>
                   <p>{credential.text}</p>
                 </div>
               ))}

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { ChevronUp } from 'lucide-react'
 
 export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false)
@@ -31,7 +32,7 @@ export default function BackToTop() {
       onClick={scrollToTop}
       aria-label="Volver arriba"
     >
-      ↑
+      <ChevronUp size={24} strokeWidth={2} />
     </button>
   )
 }

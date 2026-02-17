@@ -1,11 +1,18 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { Mail, Phone, MapPin, Check, type LucideIcon } from 'lucide-react'
 
-const contactInfo = [
-  { icon: '📧', title: 'Email', text: 'johan.retana@example.com' },
-  { icon: '📱', title: 'Teléfono', text: '+506 XXXX-XXXX' },
-  { icon: '📍', title: 'Ubicación', text: 'Costa Rica' },
+interface ContactItem {
+  icon: LucideIcon
+  title: string
+  text: string
+}
+
+const contactInfo: ContactItem[] = [
+  { icon: Mail, title: 'Email', text: 'johan.retana@example.com' },
+  { icon: Phone, title: 'Teléfono', text: '+506 XXXX-XXXX' },
+  { icon: MapPin, title: 'Ubicación', text: 'Costa Rica' },
 ]
 
 export default function Contact() {
@@ -85,7 +92,7 @@ export default function Contact() {
                 }}
                 className="contact-item"
               >
-                <div className="contact-icon">{item.icon}</div>
+                <div className="contact-icon"><item.icon size={24} strokeWidth={1.5} /></div>
                 <div>
                   <h4>{item.title}</h4>
                   <p>{item.text}</p>
@@ -146,7 +153,8 @@ export default function Contact() {
                 {isSubmitting
                   ? 'Enviando...'
                   : submitStatus === 'success'
-                  ? '✓ Enviado'
+                  ? <><Check size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> Enviado</>
+
                   : 'Enviar Mensaje'}
               </button>
               {submitStatus === 'success' && (

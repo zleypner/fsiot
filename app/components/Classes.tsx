@@ -66,10 +66,10 @@ export default function Classes() {
                 <Image
                   src={classItem.image}
                   alt={classItem.name}
-                  width={300}
-                  height={200}
+                  width={500}
+                  height={350}
                   loading="lazy"
-                  quality={85}
+                  quality={100}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>

@@ -383,6 +383,14 @@ body {
     padding: 1rem 0;
 }
 
+.hero > .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
 @media (min-width: 768px) {
     .hero {
         height: 100vh;
@@ -442,6 +450,12 @@ body {
     max-width: 800px;
     padding: 1rem; /* Mobile first */
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -825,9 +839,36 @@ section::before {
 }
 
 .credential-icon {
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 12px;
+    color: white;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-block;
+}
+
+.credential-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+}
+
+@media (max-width: 767px) {
+    .credential-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        border-radius: 10px;
+    }
+
+    .credential-icon svg {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .credential-item:hover .credential-icon {
@@ -978,11 +1019,39 @@ section::before {
 .service-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 16px;
+    color: white;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
     will-change: transform;
     transform: translateZ(0);
+}
+
+.service-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke-width: 1.5;
+}
+
+@media (max-width: 767px) {
+    .service-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+    }
+
+    .service-icon svg {
+        width: 28px;
+        height: 28px;
+    }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1068,7 +1137,7 @@ section::before {
 
 .class-image {
     width: 100%;
-    height: 200px;
+    height: 280px;
     overflow: hidden;
     position: relative;
 }
@@ -1178,9 +1247,36 @@ section::before {
 }
 
 .contact-icon {
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 12px;
+    color: white;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-block;
+}
+
+.contact-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+}
+
+@media (max-width: 767px) {
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        border-radius: 10px;
+    }
+
+    .contact-icon svg {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .contact-item:hover .contact-icon {
@@ -1531,7 +1627,7 @@ a, button, input, textarea, select {
     
     /* Better class cards on mobile */
     .class-image {
-        height: 200px;
+        height: 220px;
     }
     
     /* Improve footer on mobile */

@@ -13,8 +13,9 @@ export default function Navigation() {
       const scrollY = window.pageYOffset + 100
 
       sections.forEach((section) => {
-        const sectionTop = (section as HTMLElement).offsetTop
-        const sectionHeight = section.offsetHeight
+        const sectionEl = section as HTMLElement
+        const sectionTop = sectionEl.offsetTop
+        const sectionHeight = sectionEl.offsetHeight
         const sectionId = section.getAttribute('id')
 
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {

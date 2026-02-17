@@ -1,22 +1,42 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import {
+  Droplets,
+  Leaf,
+  PersonStanding,
+  Baby,
+  Stethoscope,
+  Target,
+  Briefcase,
+  Users,
+  Brain,
+  Dumbbell,
+  Building2,
+  type LucideIcon
+} from 'lucide-react'
 
-const massageServices = [
-  { icon: '💆', title: 'Linfático', description: 'Estimula el sistema linfático para eliminar toxinas y reducir la retención de líquidos.' },
-  { icon: '🌿', title: 'Relajante', description: 'Alivia el estrés y la tensión muscular, promoviendo un estado de relajación profunda.' },
-  { icon: '🏃', title: 'Deportivo', description: 'Preparación y recuperación muscular para atletas y personas activas.' },
-  { icon: '🤰', title: 'Embarazo', description: 'Masaje especializado para aliviar molestias durante el embarazo.' },
-  { icon: '⚕️', title: 'Terapéutico', description: 'Tratamiento dirigido a condiciones específicas y lesiones.' },
-  { icon: '🎯', title: 'Descontracturante', description: 'Liberación de contracturas y puntos de tensión muscular.' },
+interface Service {
+  icon: LucideIcon
+  title: string
+  description: string
+}
+
+const massageServices: Service[] = [
+  { icon: Droplets, title: 'Linfático', description: 'Estimula el sistema linfático para eliminar toxinas y reducir la retención de líquidos.' },
+  { icon: Leaf, title: 'Relajante', description: 'Alivia el estrés y la tensión muscular, promoviendo un estado de relajación profunda.' },
+  { icon: PersonStanding, title: 'Deportivo', description: 'Preparación y recuperación muscular para atletas y personas activas.' },
+  { icon: Baby, title: 'Embarazo', description: 'Masaje especializado para aliviar molestias durante el embarazo.' },
+  { icon: Stethoscope, title: 'Terapéutico', description: 'Tratamiento dirigido a condiciones específicas y lesiones.' },
+  { icon: Target, title: 'Descontracturante', description: 'Liberación de contracturas y puntos de tensión muscular.' },
 ]
 
-const therapyServices = [
-  { icon: '💼', title: 'Laboral', description: 'Prevención y tratamiento de lesiones relacionadas con el trabajo.' },
-  { icon: '👴', title: 'Adulto Mayor', description: 'Atención especializada para mantener la movilidad y calidad de vida.' },
-  { icon: '🧠', title: 'Derrame Cerebral', description: 'Rehabilitación neurológica para recuperación funcional.' },
-  { icon: '⚽', title: 'Lesiones Deportivas', description: 'Tratamiento y recuperación de lesiones relacionadas con el deporte.' },
-  { icon: '🏥', title: 'Rehabilitación Postoperatoria', description: 'Recuperación guiada después de procedimientos quirúrgicos.' },
+const therapyServices: Service[] = [
+  { icon: Briefcase, title: 'Laboral', description: 'Prevención y tratamiento de lesiones relacionadas con el trabajo.' },
+  { icon: Users, title: 'Adulto Mayor', description: 'Atención especializada para mantener la movilidad y calidad de vida.' },
+  { icon: Brain, title: 'Derrame Cerebral', description: 'Rehabilitación neurológica para recuperación funcional.' },
+  { icon: Dumbbell, title: 'Lesiones Deportivas', description: 'Tratamiento y recuperación de lesiones relacionadas con el deporte.' },
+  { icon: Building2, title: 'Rehabilitación Postoperatoria', description: 'Recuperación guiada después de procedimientos quirúrgicos.' },
 ]
 
 export default function Services() {
@@ -67,7 +87,7 @@ export default function Services() {
                 }}
                 className="service-card"
               >
-                <div className="service-icon">{service.icon}</div>
+                <div className="service-icon"><service.icon size={32} strokeWidth={1.5} /></div>
                 <h4>{service.title}</h4>
                 <p>{service.description}</p>
               </div>
@@ -86,7 +106,7 @@ export default function Services() {
                 }}
                 className="service-card"
               >
-                <div className="service-icon">{service.icon}</div>
+                <div className="service-icon"><service.icon size={32} strokeWidth={1.5} /></div>
                 <h4>{service.title}</h4>
                 <p>{service.description}</p>
               </div>
