@@ -1,17 +1,19 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Mail, Phone, MapPin, Check, type LucideIcon } from 'lucide-react'
+import { Mail, Phone, MapPin, Check, MessageCircle, type LucideIcon } from 'lucide-react'
 
 interface ContactItem {
   icon: LucideIcon
   title: string
   text: string
+  link?: string
 }
 
 const contactInfo: ContactItem[] = [
-  { icon: Mail, title: 'Email', text: 'johan.retana@example.com' },
-  { icon: Phone, title: 'Teléfono', text: '+506 XXXX-XXXX' },
+  { icon: Mail, title: 'Email', text: 'johan7v@hotmail.com', link: 'mailto:johan7v@hotmail.com' },
+  { icon: MessageCircle, title: 'WhatsApp', text: '8446-6067', link: 'https://wa.me/50684466067' },
+  { icon: Phone, title: 'Teléfono', text: '8446-6067' },
   { icon: MapPin, title: 'Ubicación', text: 'Costa Rica' },
 ]
 
@@ -95,7 +97,11 @@ export default function Contact() {
                 <div className="contact-icon"><item.icon size={24} strokeWidth={1.5} /></div>
                 <div>
                   <h4>{item.title}</h4>
-                  <p>{item.text}</p>
+                  {item.link ? (
+                    <p><a href={item.link} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>{item.text}</a></p>
+                  ) : (
+                    <p>{item.text}</p>
+                  )}
                 </div>
               </div>
             ))}
