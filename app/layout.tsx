@@ -20,7 +20,7 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Johan Retana - Terapia Física y Rehabilitación',
+  title: 'Fisio Training - Terapia Física y Rehabilitación',
   description: 'Johan Retana - Terapeuta Físico especializado en rehabilitación, masajes y clases grupales. Servicios profesionales de terapia física en Costa Rica.',
   keywords: 'terapia física, rehabilitación, masajes, clases grupales, fisioterapia, Costa Rica',
   appleWebApp: {

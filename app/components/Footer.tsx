@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <p>&copy; 2026 Johan Retana - Terapia Física y Rehabilitación. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Fisio Training. Todos los derechos reservados.</p>
           </div>
           <a
             href="https://www.instagram.com/fisiotraining.johan?utm_source=qr"

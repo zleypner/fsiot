@@ -79,7 +79,7 @@ export default function Navigation() {
       <div className="container">
         <div className="nav-wrapper">
           <div className="logo">
-            <h2>Johan Retana</h2>
+            <h2>Fisio Training</h2>
           </div>
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             {navLinks.map((link) => (

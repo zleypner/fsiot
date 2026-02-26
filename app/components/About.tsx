@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { GraduationCap, Hand, Dumbbell, type LucideIcon } from 'lucide-react'
+import { GraduationCap, Hand, Dumbbell, MessageCircle, type LucideIcon } from 'lucide-react'
 
 interface Credential {
   icon: LucideIcon
@@ -44,6 +44,12 @@ export default function About() {
                   <p>{credential.text}</p>
                 </div>
               ))}
+            </div>
+            <div className="cta-section" style={{ marginTop: '2rem' }}>
+              <a href="https://wa.me/50684466067" target="_blank" rel="noopener noreferrer" className="cta-whatsapp">
+                <MessageCircle size={24} />
+                <span>Contactar por WhatsApp</span>
+              </a>
             </div>
           </div>
         </div>

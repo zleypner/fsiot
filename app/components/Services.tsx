@@ -14,6 +14,7 @@ import {
   Brain,
   Dumbbell,
   Building2,
+  MessageCircle,
   type LucideIcon
 } from 'lucide-react'
 
@@ -162,6 +163,12 @@ export default function Services() {
               </div>
             ))}
           </div>
+          <div className="cta-section">
+            <a href="https://wa.me/50684466067" target="_blank" rel="noopener noreferrer" className="cta-whatsapp">
+              <MessageCircle size={24} />
+              <span>Agenda tu cita por WhatsApp</span>
+            </a>
+          </div>
         </div>
 
         <div id="clases-grupales" className="service-category">
@@ -208,6 +215,12 @@ export default function Services() {
                 <p>{classItem.description}</p>
               </div>
             ))}
+          </div>
+          <div className="cta-section">
+            <a href="https://wa.me/50684466067" target="_blank" rel="noopener noreferrer" className="cta-whatsapp">
+              <MessageCircle size={24} />
+              <span>Reserva tu clase por WhatsApp</span>
+            </a>
           </div>
         </div>
       </div>
