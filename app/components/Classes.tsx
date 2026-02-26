@@ -21,6 +21,7 @@ export default function Classes() {
   const classCardsRef = useRef<HTMLDivElement[]>([])
 
   useEffect(() => {
+    const cards = classCardsRef.current
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry, index) => {
@@ -35,12 +36,12 @@ export default function Classes() {
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     )
 
-    classCardsRef.current.forEach((card) => {
+    cards.forEach((card) => {
       if (card) observer.observe(card)
     })
 
     return () => {
-      classCardsRef.current.forEach((card) => {
+      cards.forEach((card) => {
         if (card) observer.unobserve(card)
       })
     }

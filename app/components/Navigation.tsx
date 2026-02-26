@@ -68,9 +68,9 @@ export default function Navigation() {
 
   const navLinks = [
     { href: '#inicio', label: 'Inicio' },
+    { href: '#servicios', label: 'Terapia Física' },
+    { href: '#clases-grupales', label: 'Entrenamiento' },
     { href: '#sobre-mi', label: 'Sobre Mí' },
-    { href: '#servicios', label: 'Servicios' },
-    { href: '#clases', label: 'Clases Grupales' },
     { href: '#contacto', label: 'Contacto' },
   ]
 

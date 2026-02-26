@@ -12,17 +12,17 @@ const inter = Inter({
   preload: true,
 })
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#2563eb',
+}
+
 export const metadata: Metadata = {
   title: 'Johan Retana - Terapia Física y Rehabilitación',
   description: 'Johan Retana - Terapeuta Físico especializado en rehabilitación, masajes y clases grupales. Servicios profesionales de terapia física en Costa Rica.',
   keywords: 'terapia física, rehabilitación, masajes, clases grupales, fisioterapia, Costa Rica',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
-  themeColor: '#2563eb',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
