@@ -13,11 +13,11 @@ interface ContactItem {
 const contactInfo: ContactItem[] = [
   { icon: Mail, title: 'Email', text: 'johan7v@hotmail.com', link: 'mailto:johan7v@hotmail.com' },
   { icon: MessageCircle, title: 'WhatsApp', text: '+506 8446-6067', link: 'https://wa.me/50684466067' },
-  { icon: Instagram, title: 'Instagram', text: '@fisiotraining.johan', link: 'https://www.instagram.com/fisiotraining.johan?utm_source=qr' },
+  { icon: Instagram, title: 'Instagram', text: 'Abrir perfil', link: 'https://www.instagram.com/fisiotraining.johan?utm_source=qr' },
 ]
 
 export default function Contact() {
-  const contactItemsRef = useRef<HTMLDivElement[]>([])
+  const contactItemsRef = useRef<HTMLAnchorElement[]>([])
 
   useEffect(() => {
     const items = contactItemsRef.current
@@ -56,23 +56,23 @@ export default function Contact() {
         <div className="contact-content">
           <div className="contact-info">
             {contactInfo.map((item, index) => (
-              <div
+              <a
                 key={index}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 ref={(el) => {
                   if (el) contactItemsRef.current.push(el)
                 }}
                 className="contact-item"
+                style={{ textDecoration: 'none', color: 'inherit' }}
               >
                 <div className="contact-icon"><item.icon size={24} strokeWidth={1.5} /></div>
                 <div>
                   <h4>{item.title}</h4>
-                  {item.link ? (
-                    <p><a href={item.link} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>{item.text}</a></p>
-                  ) : (
-                    <p>{item.text}</p>
-                  )}
+                  <p>{item.text}</p>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
