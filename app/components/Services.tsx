@@ -25,10 +25,7 @@ const classesData = [
   { name: 'Spinning', description: 'Entrenamiento en bicicleta fija que fortalece piernas, mejora la resistencia cardiovascular y ayuda a quemar grasa.', image: '/assets/WhatsApp Image 2026-02-12 at 14.43.57.jpeg' },
   { name: 'Mini-Bands', description: 'Ejercicios con bandas elásticas para fortalecer músculos, mejorar estabilidad y prevenir lesiones.', image: '/assets/WhatsApp Image 2026-02-12 at 14.48.47.jpeg' },
   { name: 'Baile Popular', description: 'Clases de baile con ritmos conocidos que mejoran coordinación, energía y disfrute del movimiento.', image: '/assets/1.jpeg' },
-  { name: 'Cardio-Dance', description: 'Combinación de baile y cardio que eleva el ritmo cardíaco mientras entrenás de forma entretenida.', image: '/assets/fisio.jpeg' },
   { name: 'Strong Nation', description: 'Entrenamiento de alta intensidad sincronizado con música, enfocado en fuerza, resistencia y potencia.', image: '/assets/STRONG%20NATION.jpeg' },
-  { name: 'Cross-Training', description: 'Rutinas variadas que combinan fuerza, cardio y ejercicios funcionales para mejorar el rendimiento general.', image: '/assets/Entrenador.jpeg' },
-  { name: 'Acondicionamiento Físico', description: 'Entrenamiento integral para mejorar fuerza, resistencia, movilidad y condición física general.', image: '/assets/acondicionamiento-fisico.png' },
 ]
 
 interface Service {
@@ -94,18 +91,6 @@ export default function Services() {
         </div>
         <div className="service-category">
           <h3 className="category-title">Masaje y Terapia Física</h3>
-          <div className="therapy-section-images-row">
-            <div className="therapy-section-image-box">
-              <Image
-                src="/assets/Terapia%20f%C3%ADsica%20y%20masajes.jpeg"
-                alt="Consultorio de terapia física"
-                width={600}
-                height={450}
-                className="therapy-section-img"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
-              />
-            </div>
-          </div>
           <h4 className="category-subtitle">Masaje</h4>
           <div className="service-grid">
             {massageServices.map((service, index) => (
