@@ -367,10 +367,10 @@ body {
 .hero-split {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    min-height: 100dvh;
-    height: 100vh;
-    height: 100dvh;
+    min-height: calc(100vh - 60px);
+    min-height: calc(100dvh - 60px);
+    height: calc(100vh - 60px);
+    height: calc(100dvh - 60px);
     margin-top: 60px;
     overflow: hidden;
 }
@@ -378,7 +378,7 @@ body {
 .hero-split-panel {
     position: relative;
     flex: 1 1 auto;
-    min-height: 50vh;
+    min-height: calc(50vh - 30px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -477,14 +477,14 @@ body {
 @media (min-width: 768px) {
     .hero-split {
         flex-direction: row;
-        min-height: 100vh;
-        height: 100vh;
+        min-height: calc(100vh - 70px);
+        height: calc(100vh - 70px);
         margin-top: 70px;
     }
 
     .hero-split-panel {
         flex: 1 1 50%;
-        min-height: 100vh;
+        min-height: calc(100vh - 70px);
         padding: 2rem;
     }
 

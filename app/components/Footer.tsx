@@ -1,5 +1,4 @@
 import { Instagram } from 'lucide-react'
-import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -7,13 +6,6 @@ export default function Footer() {
       <div className="container">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <Image
-              src="/assets/acondicionamiento-fisico.png"
-              alt="Fisio Training Logo"
-              width={60}
-              height={60}
-              style={{ objectFit: 'contain' }}
-            />
             <p>&copy; 2026 Johan Retana - Terapia Física y Rehabilitación. Todos los derechos reservados.</p>
           </div>
           <a

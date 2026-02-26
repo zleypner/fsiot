@@ -17,15 +17,15 @@ import {
   type LucideIcon
 } from 'lucide-react'
 
-const classesData = [
-  { name: 'HIIT', description: 'Entrenamiento de alta intensidad que combina fuerza y cardio para quemar calorías y mejorar la resistencia en menos tiempo.', image: '/assets/sincerely-media-wGFibXDQlBI-unsplash.jpg' },
-  { name: 'Step', description: 'Clase cardiovascular con plataforma que mejora coordinación, resistencia y tonificación de piernas de forma dinámica.', image: '/assets/toralf-thomassen-5S40ixhBK-I-unsplash.jpg' },
-  { name: 'Pilates', description: 'Entrenamiento de bajo impacto enfocado en fortalecer el core, mejorar la postura y el control corporal.', image: '/assets/rosa-rafael-cJwl8182Mjs-unsplash.jpg' },
-  { name: 'Zumba', description: 'Clase de baile con ritmos latinos que mejora el cardio y quema calorías de forma divertida.', image: '/assets/Zumba.jpeg' },
-  { name: 'Spinning', description: 'Entrenamiento en bicicleta fija que fortalece piernas, mejora la resistencia cardiovascular y ayuda a quemar grasa.', image: '/assets/WhatsApp Image 2026-02-12 at 14.43.57.jpeg' },
-  { name: 'Mini-Bands', description: 'Ejercicios con bandas elásticas para fortalecer músculos, mejorar estabilidad y prevenir lesiones.', image: '/assets/WhatsApp Image 2026-02-12 at 14.48.47.jpeg' },
-  { name: 'Baile Popular', description: 'Clases de baile con ritmos conocidos que mejoran coordinación, energía y disfrute del movimiento.', image: '/assets/1.jpeg' },
-  { name: 'Strong Nation', description: 'Entrenamiento de alta intensidad sincronizado con música, enfocado en fuerza, resistencia y potencia.', image: '/assets/STRONG%20NATION.jpeg' },
+const groupClassesServices = [
+  { name: 'HIIT', description: 'Entrenamiento de intervalos de alta intensidad que alterna ejercicios explosivos con descansos cortos para maximizar la quema de calorías.' },
+  { name: 'Step', description: 'Ejercicios aeróbicos con plataforma que mejoran la coordinación, resistencia y tonifican piernas y glúteos.' },
+  { name: 'Pilates', description: 'Método de ejercicios que fortalece el core, mejora la postura y aumenta la flexibilidad corporal.' },
+  { name: 'Zumba', description: 'Clase de baile con ritmos latinos que mejora el cardio y quema calorías de forma divertida.' },
+  { name: 'Spinning', description: 'Entrenamiento en bicicleta fija que fortalece piernas, mejora la resistencia cardiovascular y ayuda a quemar grasa.' },
+  { name: 'Mini-Bands', description: 'Ejercicios con bandas elásticas para fortalecer músculos, mejorar estabilidad y prevenir lesiones.' },
+  { name: 'Baile Popular', description: 'Clases de baile con ritmos populares que mejoran la coordinación, el ritmo y la expresión corporal.' },
+  { name: 'Strong Nation', description: 'Entrenamiento de alta intensidad sincronizado con música, enfocado en fuerza, resistencia y potencia.' },
 ]
 
 interface Service {
@@ -51,12 +51,24 @@ const therapyServices: Service[] = [
   { icon: Building2, title: 'Rehabilitación Postoperatoria', description: 'Recuperación guiada después de procedimientos quirúrgicos.' },
 ]
 
+const therapyGalleryImages = [
+  { name: 'Terapia Física', image: '/assets/sincerely-media-wGFibXDQlBI-unsplash.jpg' },
+  { name: 'Consultorio', image: '/assets/Terapia.jpeg' },
+  { name: 'Rehabilitación', image: '/assets/toralf-thomassen-5S40ixhBK-I-unsplash.jpg' },
+]
+
+const classesGalleryImages = [
+  { name: 'Mini-Bands', image: '/assets/WhatsApp Image 2026-02-12 at 14.48.47.jpeg' },
+  { name: 'Zumba', image: '/assets/Zumba.jpeg' },
+  { name: 'Strong Nation', image: '/assets/STRONG NATION.jpeg' },
+  { name: 'Entrenamiento', image: '/assets/1.jpeg' },
+]
+
 export default function Services() {
   const serviceCardsRef = useRef<HTMLDivElement[]>([])
-  const classCardsRef = useRef<HTMLDivElement[]>([])
 
   useEffect(() => {
-    const cards = [...serviceCardsRef.current, ...classCardsRef.current]
+    const cards = serviceCardsRef.current
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry, index) => {
@@ -91,6 +103,33 @@ export default function Services() {
         </div>
         <div className="service-category">
           <h3 className="category-title">Masaje y Terapia Física</h3>
+          <div className="classes-grid">
+            {therapyGalleryImages.map((item, index) => (
+              <div
+                key={index}
+                ref={(el) => {
+                  if (el) serviceCardsRef.current.push(el)
+                }}
+                className="class-card"
+              >
+                <div className="class-image">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={500}
+                    height={350}
+                    loading="lazy"
+                    quality={100}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
           <h4 className="category-subtitle">Masaje</h4>
           <div className="service-grid">
             {massageServices.map((service, index) => (
@@ -127,9 +166,36 @@ export default function Services() {
 
         <div id="clases-grupales" className="service-category">
           <h3 className="category-title">Clases Grupales</h3>
+          <div className="classes-grid">
+            {classesGalleryImages.map((item, index) => (
+              <div
+                key={index}
+                ref={(el) => {
+                  if (el) serviceCardsRef.current.push(el)
+                }}
+                className="class-card"
+              >
+                <div className="class-image">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={500}
+                    height={350}
+                    loading="lazy"
+                    quality={100}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'contain',
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
           <p className="classes-intro">Entrená en grupo, mantené la motivación y mejorá tu condición física de forma guiada y dinámica.</p>
           <div className="service-grid">
-            {classesData.map((classItem, index) => (
+            {groupClassesServices.map((classItem, index) => (
               <div
                 key={index}
                 ref={(el) => {
@@ -140,34 +206,6 @@ export default function Services() {
                 <div className="service-icon"><Dumbbell size={32} strokeWidth={1.5} /></div>
                 <h4>{classItem.name}</h4>
                 <p>{classItem.description}</p>
-              </div>
-            ))}
-          </div>
-          <h4 className="classes-gallery-title">Galería</h4>
-          <div className="classes-grid">
-            {classesData.map((classItem, index) => (
-              <div
-                key={index}
-                ref={(el) => {
-                  if (el) classCardsRef.current.push(el)
-                }}
-                className={`class-card ${classItem.name === 'Acondicionamiento Físico' ? 'class-card--full-image' : ''}`}
-              >
-                <div className="class-image">
-                  <Image
-                    src={classItem.image}
-                    alt={classItem.name}
-                    width={500}
-                    height={350}
-                    loading="lazy"
-                    quality={100}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: classItem.name === 'Acondicionamiento Físico' ? 'contain' : 'cover',
-                    }}
-                  />
-                </div>
               </div>
             ))}
           </div>
